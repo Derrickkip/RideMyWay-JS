@@ -1,0 +1,23 @@
+{
+  "title": "new user",
+  "description": "describes properties required to create a user",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9\\.]+@[a-zA-Z0-9\\.]+\\.[a-zA-Z]*$"
+    },
+    "username": {
+      "type": "string"
+    },
+    "phonenumber": {
+      "type": "string",
+      "pattern": "[0-9]{9,}"
+    },
+    "password": {
+      "type": "string",
+      "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})"
+    }
+  },
+  "required": ["email", "username", "phonenumber", "password"]
+}
