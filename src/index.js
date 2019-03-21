@@ -22,7 +22,7 @@ app.use(async (req, res, next) => {
 
 app.use('/api/users', routes.users)
 
-app.use(verifyToken());
+app.use('/api/rides', verifyToken, routes.rides)
 
 db.sequelize.sync().then(() => {
   app.listen(3000, () => {

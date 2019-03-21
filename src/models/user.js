@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
   }, {});
-  User.associate = function(models) {
-    // define associations here
+  User.associate = (models) => {
+    User.hasMany(models.Ride, { onDelete: 'CASCADE' })
   };
   return User;
 };
