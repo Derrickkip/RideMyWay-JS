@@ -1,8 +1,7 @@
 import 'dotenv/config';
 const nJwt = require('njwt');
 
-const verifyToken = () => {
-  return async (req, res, next) => {
+const verifyToken = async (req, res, next) => {
     let tokenString = req.header('Authorization')
     
     if(!tokenString) {
@@ -34,7 +33,6 @@ const verifyToken = () => {
     })
     next()
 
-  }
 }
 
 export default verifyToken;

@@ -1,0 +1,22 @@
+{
+  "title": "New Ride",
+  "description": "describes properties required to create a new ride",
+  "type": "object",
+  "properties": {
+    "start": {
+      "type": "string",
+      "minLength": 3
+    },
+    "destination": {
+      "type": "string",
+      "minLength": 3
+    },
+    "time": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    }
+  },
+  "required": ["start", "destination", "time", "price"]
+}

@@ -7,7 +7,7 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const db = {};
 
-const sequelize = new Sequelize('postgres://activodev:acctivo@localhost:5432/ride_my_way');
+const sequelize = new Sequelize('postgres://activodev:activo@localhost:5432/ride_my_way');
 
 fs
   .readdirSync(__dirname)

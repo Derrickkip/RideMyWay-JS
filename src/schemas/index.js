@@ -2,8 +2,11 @@ let Ajv = require('ajv')
 let ajv = Ajv({ allErrors: true, removeAdditional: 'all'})
 let userSchema = require('../schemas/newUser.json')
 let loginSchema = require('../schemas/loginSchema.json')
-ajv.addSchema(userSchema, 'new-user')
-ajv.addSchema(loginSchema, 'login-user')
+let rideSchema = require('../schemas/newRide.json')
+
+ajv.addSchema(userSchema, 'new-user');
+ajv.addSchema(loginSchema, 'login-user');
+ajv.addSchema(rideSchema, 'new-ride');
 
 function errorResponse(schemaErrors) {
   let errors = schemaErrors.map((error) => {
