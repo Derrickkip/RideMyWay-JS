@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Ride.associate = (models) => {
     Ride.belongsTo(models.User);
+    Ride.hasMany(models.Request, { onDelete: 'CASCADE' });
   };
 
   return Ride;
