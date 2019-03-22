@@ -1,19 +1,20 @@
-'use strict'
+/* eslint-disable no-unused-expressions */
+
 module.exports = (sequelize, DataTypes) => {
   const Request = sequelize.define('Request', {
-    'status': {
+    status: {
       type: DataTypes.STRING,
       isIn: {
         args: [['pending', 'approved', 'rejected']],
-        msg: "Must be either pending, accepted or rejected"
+        msg: 'Must be either pending, accepted or rejected',
       },
-      defaultValue: 'pending'
-    }
-  })
+      defaultValue: 'pending',
+    },
+  });
   Request.associate = (models) => {
-    Request.belongsTo(models.User),
-    Request.belongsTo(models.Ride)
-  }
+    Request.belongsTo(models.User);
+    Request.belongsTo(models.Ride);
+  };
 
-  return Request
-}
+  return Request;
+};

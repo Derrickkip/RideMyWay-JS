@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     time: {
-      type: DataTypes.DATE
+      type: DataTypes.DATE,
     },
     price: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
     },
   }, {});
   Ride.associate = (models) => {
@@ -19,4 +19,4 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   return Ride;
-}
+};

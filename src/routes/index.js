@@ -4,4 +4,4 @@ import rides from './rides';
 export default {
   users,
   rides,
-}
+};

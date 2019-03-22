@@ -1,0 +1,12 @@
+{
+  "title": "Response Schema",
+  "description": "describes properties required to update a request",
+  "type": "object",
+  "properties": {
+    "status": {
+      "message": "should be either accepted or rejected",
+      "enum": ["accepted", "rejected"]
+    }
+  },
+  "required": ["status"]
+}
