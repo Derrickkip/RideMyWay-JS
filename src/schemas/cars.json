@@ -1,0 +1,17 @@
+{
+  "title": "car",
+  "description": "describes properties for creating a car",
+  "type": "object",
+  "properties": {
+    "model": {
+      "type": "string"
+    },
+    "registration": {
+      "type": "string"
+    },
+    "seats": {
+      "type": "number"
+    }
+  },
+  "required": ["model", "registration", "seats"]
+}

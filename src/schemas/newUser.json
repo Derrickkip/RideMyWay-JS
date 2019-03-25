@@ -15,8 +15,7 @@
       "pattern": "[0-9]{9,}"
     },
     "password": {
-      "type": "string",
-      "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})"
+      "type": "string"
     }
   },
   "required": ["email", "username", "phonenumber", "password"]

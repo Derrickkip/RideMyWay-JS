@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     username: {
@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   User.associate = (models) => {
-    User.hasMany(models.Ride, { onDelete: 'CASCADE' })
+    User.hasMany(models.Ride, { onDelete: 'CASCADE' });
+    User.hasMany(models.Request, { onDelete: 'CASCADE' });
   };
   return User;
 };

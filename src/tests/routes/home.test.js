@@ -1,27 +1,26 @@
-const chai = require('chai');
-const chaiHttp = require('chai-http');
-const should = chai.should();
-const request = require('supertest');
-const app = require('../../index');
+// const chai = require('chai');
+// const chaiHttp = require('chai-http');
 
-chai.use(chaiHttp);
+// const app = require('../../index');
 
-describe('The / route', () => {
-  it('should return Ok status', (done) => {
-    chai.request(app)
-      .get('/')
-      .end((err, res) => {
-        res.should.have.status(200);
-        done();
-      });
-  });
+// chai.use(chaiHttp);
 
-  it('should return correct message', (done) => {
-    chai.request(app)
-      .get('/')
-      .end((err, response) => {
-        response.text.should.contain('Hello World');
-        done()
-      });
-  });
-});
+// describe('The / route', () => {
+//   it('should return Ok status', (done) => {
+//     chai.request(app)
+//       .get('/')
+//       .end((err, res) => {
+//         res.should.have.status(200);
+//         done();
+//       });
+//   });
+
+//   it('should return correct message', (done) => {
+//     chai.request(app)
+//       .get('/')
+//       .end((err, response) => {
+//         response.text.should.contain('Hello World');
+//         done();
+//       });
+//   });
+// });
