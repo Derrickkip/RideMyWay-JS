@@ -4,6 +4,7 @@ import checkUser from '../helpers/validators/signupValidator';
 import generateToken from '../helpers/tokenGenerator';
 
 const bcrypt = require('bcrypt');
+const zxcvbn = require('zxcvbn');
 
 const router = Router();
 
@@ -12,6 +13,15 @@ router.post('/signup', validateSchema('new-user'), checkUser(), async (req, res)
   const {
     email, username, phonenumber, password,
   } = req.body;
+
+  const passwordIsSecure = zxcvbn(password);
+
+  if (passwordIsSecure.feedback.warning && passwordIsSecure.feedback.suggestions) {
+    return res.status(400).send({
+      warning: passwordIsSecure.feedback.warning,
+      suggestions: passwordIsSecure.feedback.suggestions,
+    });
+  }
 
   const hash = parseInt(process.env.HASH, 10);
   const passwordHash = bcrypt.hashSync(password, hash);
