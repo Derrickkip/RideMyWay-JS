@@ -4,7 +4,7 @@
   "description": "Ride My Way is a carpoolong app",
   "main": "index.js",
   "scripts": {
-    "start": "node --exec babel-node src/index.js",
+    "start": "nodemon --exec babel-node src/index.js",
     "test": "NODE_ENV=test nyc  --reporter=lcov --reporter=text-lcov mocha src/test --recursive --compilers js:@babel/register",
     "lint": "eslint ./src --fix"
   },
