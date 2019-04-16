@@ -17,7 +17,7 @@ router.post('/', validateSchema('car'), async (req, res) => {
   if (exists) {
     return res.status(400).send({
       status: 'unsuccessful',
-      message: 'User already has a car',
+      message: 'User has a car, maybe update',
     });
   }
 
