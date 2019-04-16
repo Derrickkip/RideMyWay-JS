@@ -1,1 +1,1 @@
-web: npm start
+web: npm install nodemon --save npm start
