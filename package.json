@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "test": "mocha src/tests --recursive",
+    "test": "NODE_ENV=test nyc  --reporter=lcov --reporter=text-lcov mocha src/test --recursive --compilers js:@babel/register",
     "lint": "eslint ./src --fix"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.4",
+    "babel-plugin-istanbul": "^5.1.1",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "eslint": "^5.15.3",
@@ -31,10 +32,12 @@
     "joi-browser": "^13.4.0",
     "mocha": "^6.0.2",
     "nodemon": "^1.18.10",
+    "nyc": "^13.3.0",
     "supertest": "^3.4.2"
   },
   "dependencies": {
     "ajv": "^6.10.0",
+    "babel-register": "^6.26.0",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",

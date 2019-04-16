@@ -3,11 +3,12 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
+require('dotenv').config();
 
 const basename = path.basename(__filename);
 const db = {};
 
-const sequelize = new Sequelize('postgres://activodev:activo@localhost:5432/ride_my_way');
+const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 fs
   .readdirSync(__dirname)
